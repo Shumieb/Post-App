@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import PostCard from './PostCard';
+import {Link } from 'react-router-dom'
 
 function Post() {
     const [posts, setPosts] = useState([]);
@@ -29,17 +30,18 @@ function Post() {
 
 
   return (
-    <main className='container'>
-        <h2 className='text-center mb-4'>Posts App</h2>
+    <main className='container d-flex flex-column align-items-center justify-content-center py-4 '>
+        <h2 className='text-center mb-5'>Posts App</h2>
+        <Link to='/posts/add-new-post'><p className='btn btn-light mb-2 btn-lg text-primary fw-bold'>Add A New Post</p></Link>
         
         { loading && !error && <p className='text-center'>Loading...</p>}
 
         { !loading && error && <p className='text-center'>{error}</p>}
 
         { !loading && !error && posts.length && 
-            <ul className='d-flex flex-column align-items-center justify-content-center post-container py-4'>
+            <ul className='py-4 d-flex flex-column align-items-center justify-content-center '>
                 { posts.map(post => {
-                    return <li key={post.id} className="my-4" style={{width: "70%"}}><PostCard post={post}/></li>
+                    return <li key={post.id} className="my-2" style={{width: "100%"}}><PostCard post={post}/></li>
                 })}
             </ul>        
         }

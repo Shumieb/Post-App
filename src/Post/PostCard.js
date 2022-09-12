@@ -9,7 +9,9 @@ const PostCard = ({post}) => {
             <p className="card-text text-primary fs-5 border-start border-primary border-3 ps-2">
                 { `${post.body.substring(0, 1).toUpperCase()}${post.body.substring(1, 30)}...`}
             </p>
-            <p className='btn btn-primary pb-2 mt-2'><Link to={`${post.id}`} className="text-white fs-6">View Post</Link></p>
+            <div className='mt-4 d-flex align-items-center justify-content-center'>
+              <p className='btn btn-primary pb-2 '><Link to={`${post.id}`} className="text-white fs-6">View Post</Link></p>
+            </div>            
         </div>
     </div>
   )
