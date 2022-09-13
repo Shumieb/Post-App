@@ -3,7 +3,7 @@ import axios from 'axios'
 import PostCard from './PostCard';
 import {Link } from 'react-router-dom'
 
-function Post() {
+function Posts() {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
@@ -32,7 +32,7 @@ function Post() {
   return (
     <main className='container d-flex flex-column align-items-center justify-content-center py-4 '>
         <h2 className='text-center mb-5'>Posts App</h2>
-        <Link to='/posts/add-new-post'><p className='btn btn-light mb-2 btn-lg text-primary fw-bold'>Add A New Post</p></Link>
+        <Link to='/post/add-new-post'><p className='btn btn-light mb-2 btn-lg text-primary fw-bold'>Add A New Post</p></Link>
         
         { loading && !error && <p className='text-center'>Loading...</p>}
 
@@ -50,4 +50,4 @@ function Post() {
   )
 }
 
-export default Post
+export default Posts

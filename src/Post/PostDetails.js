@@ -12,7 +12,7 @@ const PostDetails = () => {
             </p>
         </div>
         <div className='d-flex justify-content-center'>
-            <Link to='/posts/edit-post/1'><button className='btn btn-light'>Edit Post</button></Link>
+            <Link to='/post/edit-post/1'><button className='btn btn-light'>Edit Post</button></Link>
             <button className='btn btn-danger mx-3'>Delete Post</button>
         </div>
     </div>
